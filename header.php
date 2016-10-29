@@ -36,7 +36,7 @@
 	</div>
 <?php endif; ?>
 
-<div id="page" class="hfeed site">
+<div id="page" class="site">
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 		<div class="site-header-info">
@@ -50,7 +50,7 @@
 		</div>
 
 		<?php // Show navigation menu on everything except Single pages, unless Show Primary Nav Menu on Single Pages is enabled ?>
-		<?php if ( ! is_single() || independent_publisher_show_nav_on_single() ) : ?>
+		<?php if ( !is_single() || independent_publisher_show_nav_on_single() ) : ?>
 			<nav role="navigation" class="site-navigation main-navigation">
 				<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'independent-publisher' ); ?>"><?php _e( 'Skip to content', 'independent-publisher' ); ?></a>
 

@@ -6,7 +6,10 @@ Independent Publisher
 Independent Publisher is a WordPress Theme. This README contains documentation for theme options and features, along with a list of known issues and frequently asked questions. It also contains a list of theme filters and action hooks that can be used to modify and hook into various areas of the theme, as well as a list of functions that can be overidden in a Child Theme.
 
  The main site for this project, along with a demo of this theme, is located at [http://independentpublisher.me](http://independentpublisher.me).
+ 
+**Note:** There are two versions of this theme: the primary version, which is being developed _here_ on GitHub, is also on [WordPress.org](https://wordpress.org/themes/independent-publisher/), and the secondary (forked) version is on [WordPress.com](https://wordpress.com/themes/independent-publisher). 
 
+WordPress.com took the original Independent Publisher theme from WordPress.org and changed it a bit to make it work on WordPress.com. I have no control over the WordPress.com version, as that's a closed-system, so if you have issues with that version, please post your support related questions [there](https://en.support.wordpress.com/). You can read more about the WordPress.com [version here](http://independentpublisher.me/2015/independent-publisher-announced-on-wordpress-com/).
 
 ## Table of Contents
 
@@ -31,6 +34,7 @@ Independent Publisher is a WordPress Theme. This README contains documentation f
     * [Why is the Navigation Menu and/or Widgets not Appearing on Single Post Pages?](https://github.com/raamdev/independent-publisher#why-is-the-navigation-menu-andor-widgets-not-appearing-on-single-post-pages)
     * [How can I obfuscate my email address in the Social Menu?](https://github.com/raamdev/independent-publisher/#how-can-i-obfuscate-my-email-address-in-the-social-menu)
     * [How can I use a Full Size Image for the Post Cover?](https://github.com/raamdev/independent-publisher/#how-can-i-use-a-full-size-image-for-the-post-cover)
+    * [How can I use the Full Size Image for Featured Images?](https://github.com/raamdev/independent-publisher/#how-can-i-use-a-full-size-image-for-featured-images)
 * [Color Schemes](https://github.com/raamdev/independent-publisher#color-schemes)
 * [Theme Filters and Actions](https://github.com/raamdev/independent-publisher#theme-filters-and-actions)
 * [Functions you can Override in a Child Theme](https://github.com/raamdev/independent-publisher#functions-you-can-override-in-a-child-theme)
@@ -176,7 +180,8 @@ Note that double-quotes are not allowed in that field and that you *must* use si
 MailChimp includes its own CSS in the HTML embed code that, by default, doesn't look quite right with Independent Publisher. To fix the MailChimp CSS, you can add the following to the `style.css` file of a [Child Theme](https://github.com/raamdev/independent-publisher-child-theme/) (or if you're using JetPack, simply go to *Appearance → Edit CSS* and insert the following):
 
 ```
-#mc_embed_signup .button {
+#mc_signup .button {
+	margin-top: 0 !important;
 	padding-left: 15px !important;
 	padding-right: 15px !important;
 	padding-top: 2px !important;
@@ -187,28 +192,28 @@ MailChimp includes its own CSS in the HTML embed code that, by default, doesn't 
 	width: 100% !important;
 }
 
-.entry-content #mc_embed_signup h2 {
+.entry-content #mc_signup h2 {
 	font-size: 1.8em !important;
 }
-.entry-content #mc_embed_signup input.email {
+.entry-content #mc_signup input.email {
 	width: 100% !important;
 }
-.entry-content #mc_embed_signup label {
+.entry-content #mc_signup label {
 	padding-bottom: 0 !important;
 }
-.entry-content #mc_embed_signup .mc-field-group {
+.entry-content #mc_signup .mc-field-group {
 	width: 99% !important;
 }
 
-.widget #mc_embed_signup form {
+.widget #mc_signup form {
 	text-align: center !important;
 	font-family: "Myriad Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
-.widget #mc_embed_signup input.email {
+.widget #mc_signup input.email {
 	width: 100% !important;
 	text-align: center;
 }
-.widget #mc_embed_signup input.button {
+.widget #mc_signup input.button {
 	width: 100% !important;
 }
 ```
@@ -347,6 +352,19 @@ function __custom_independent_publisher_full_width_featured_image_size() {
 }
 
 add_filter( 'independent_publisher_full_width_featured_image_size', '__custom_independent_publisher_full_width_featured_image_size' );
+```
+
+### How can I use a Full Size Image for Featured Images?
+
+By default, the theme will use a 100% width for featured images, which means`700px` wide. You can override this and use whatever the full image size is by adding the following to your Child Theme's `style.css` file:
+
+```php
+.single .wp-post-image,
+.page .wp-post-image,
+.blog .wp-post-image,
+.archive .wp-post-image {
+	width: auto;
+}
 ```
 
 ## Color Schemes

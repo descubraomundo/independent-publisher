@@ -1,275 +1,270 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Independent Publisher\n"
-"POT-Creation-Date: 2014-04-12 21:39+0400\n"
-"PO-Revision-Date: 2014-04-26 00:28+0400\n"
-"Last-Translator: Артём Рябко <rad964@ya.ru>\n"
-"Language-Team: \n"
-"Language: ru_RU\n"
+"POT-Creation-Date: 2014-08-21 10:36-0500\n"
+"PO-Revision-Date: 2015-12-06 10:52+0200\n"
+"Last-Translator: Raam Dev <raam@raamdev.com>\n"
+"Language-Team: yazilimportal.com <pmoksuz@gmail.com>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.4\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_x;esc_attr__;esc_attr_e;_nx:1,2;_ex;"
 "esc_attr_x;esc_html__;esc_html_e;esc_html_x;_n_noop:1,2;_nx_noop:1,2;"
 "translate_nooped_plural\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:16
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Упс! Страница не найдена."
+msgstr "Üzgünüm! Sayfa bulunamadı."
 
 #: ../404.php:21
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"По данному запросу ничего не найдено. Попробуйте одну из этих ссылок или "
-"поиск."
+"Burada her hangi birşey yok gibi. Belki aşağıdaki linkleri yada arama "
+"kutusunu deneyebilirsin."
 
 #: ../404.php:29 ../page_archive-template.php:32
 msgid "Most Used Categories"
-msgstr "Наиболее используемые категории"
+msgstr "Sık Kullanılan Kategoriler"
 
 #: ../404.php:45
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Просмотрите архив за этот месяц. %1$s"
+msgstr "Aylık arşivlere bakmayı deneyin. %1$s"
 
 #: ../archive.php:50
 msgid "Asides"
-msgstr "Резервы"
+msgstr "Notlar"
 
 #: ../archive.php:52
 msgid "Galleries"
-msgstr "Галереи"
+msgstr "Galeriler"
 
 #: ../archive.php:54
 msgid "Images"
-msgstr "Изображение"
+msgstr "Resimler"
 
 #: ../archive.php:56
 msgid "Videos"
-msgstr "Видео"
+msgstr "Videolar"
 
 #: ../archive.php:58
 msgid "Quotes"
-msgstr "Цитаты"
+msgstr "Alıntılar"
 
 #: ../archive.php:60
 msgid "Links"
-msgstr "Ссылки"
+msgstr "Bağlantılar"
 
 #: ../archive.php:62
 msgid "Statuses"
-msgstr "Статусы"
+msgstr "Durumlar"
 
 #: ../archive.php:64
 msgid "Audios"
-msgstr "Аудио"
+msgstr "Sesler"
 
 #: ../archive.php:66
 msgid "Chats"
-msgstr "Чаты"
+msgstr "Konuşmalar"
 
 #: ../archive.php:68 ../sidebar.php:21
 msgid "Archives"
-msgstr "Архивы"
+msgstr "Arşivler"
 
 #: ../comments.php:40 ../content.php:91
 #, php-format
 msgid "1 Comment"
 msgid_plural "%1$s Comments"
-msgstr[0] "1 Комментарии"
-msgstr[1] "%1$s Комментария"
+msgstr[0] "%1$s Yorum\t"
 
 #: ../comments.php:49 ../comments.php:70
-#, fuzzy
 msgid "Comment navigation"
-msgstr "Навигация по комментариям"
+msgstr "Yorum sayfaları"
 
 #: ../comments.php:51 ../comments.php:72
 msgid "&larr; Older Comments"
-msgstr "&larr; Предыдущие комментарии"
+msgstr "&larr; Eski Yorumlar"
 
 #: ../comments.php:52 ../comments.php:73
 msgid "Newer Comments &rarr;"
-msgstr "Новые комментарии &rarr;"
+msgstr "Yeni Yorumlar &rarr;"
 
 #: ../comments.php:83
 msgid "Comments are closed."
-msgstr "Комментарии закрыты"
+msgstr "Yorumlar kapatıldı."
 
 #: ../comments.php:102
 msgid "Readers who shared this"
-msgstr "Читатели которые поделились этим"
+msgstr "Bunu paylaşan okuyucular"
 
 #: ../comments.php:104
 msgid "Thank you!"
-msgstr "Спасибо вам!"
+msgstr "Teşekkürler!"
 
 #: ../content-none.php:13 ../no-results.php:14
 msgid "Nothing Found"
-msgstr "Ничего не найдено"
+msgstr "Hiçbir şey bulunamadı"
 
 #: ../content-none.php:20 ../no-results.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Готовы опубликовать свой первый пост? <a href=\"%1$s\">Начните здесь</a>."
+"İlk yazını paylaşmaya hazır mısın ? <a href=\"%1$s\">Get started here</a>."
 
 #: ../content-none.php:24 ../no-results.php:25
-#, fuzzy
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Простите, но по вашему запросу ничего не найдено. Попробуйте с другими "
-"ключевыми словами."
+"Üzünüm, aradığın kelime ile eşleşen bir şey bulunamadı. Farklı anahtar "
+"kelimeler deneyebilirsin."
 
 #: ../content-none.php:30 ../no-results.php:31
-#, fuzzy
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Выглядит так, будто мы можем помочь вам с тем что вы ищите. Пожалуйста "
-"используйте поиск."
+"Aradığın şeyi bulamamışsın gibi görünüyor. Belki arama yapmak isteyebilirsin."
 
-#: ../content-page.php:22 ../content-single.php:39
+#: ../content-page.php:22 ../content-single.php:58
 #: ../page_one-column-template.php:39
 msgid "Next page &rarr;"
-msgstr "Следующая страница &rarr;"
+msgstr "Sonraki sayfa &rarr;"
 
-#: ../content-page.php:23 ../content-single.php:40
+#: ../content-page.php:23 ../content-single.php:59
 #: ../page_one-column-template.php:40
 msgid "&larr; Previous page"
-msgstr "&larr; Предыдущая страница"
+msgstr "&larr; Önceki sayfa"
 
-#: ../content-page.php:29 ../content-single.php:46 ../content.php:53
+#: ../content-page.php:29 ../content-single.php:65 ../content.php:53
 #: ../page_one-column-template.php:46
 msgid "Pages:"
-msgstr "Страницы:"
+msgstr "Sayfalar:"
 
-#: ../content-page.php:47 ../content-single.php:66 ../content.php:95
+#: ../content-page.php:47 ../content-single.php:85 ../content.php:95
 #: ../image.php:127 ../page_archive-template.php:72
 #: ../page_one-column-template.php:53
 msgid "Edit"
-msgstr "Редактировать"
+msgstr "Düzenle"
 
-#: ../content.php:21 ../content.php:47 ../functions.php:1014
-#: ../functions.php:1029
+#: ../content.php:21 ../content.php:47 ../functions.php:1075
+#: ../functions.php:1090
 #, php-format
 msgid "Permalink to %s"
-msgstr "Постоянная ссылка на %s"
+msgstr "Bağlantı %s"
 
-#: ../content.php:91 ../functions.php:397
+#: ../content.php:91 ../functions.php:408
 msgid "Comment"
-msgstr "Комментарии"
+msgstr "Yorum"
 
 #: ../content.php:91
 msgid "% Comments"
-msgstr "% Комментарии"
+msgstr "% Yorumlar"
 
-#: ../functions.php:98
+#: ../functions.php:104
 msgid "Primary Menu"
-msgstr "Основное меню"
+msgstr "Birincil Menü"
 
-#: ../functions.php:99
+#: ../functions.php:105
 msgid "Single Posts Menu"
-msgstr ""
+msgstr "Tekli Yazı Menüsü"
 
-#: ../functions.php:100
-#, fuzzy
+#: ../functions.php:106
 msgid "Social"
-msgstr "Социальные сети"
+msgstr "Sosyal"
 
-#: ../functions.php:141
+#: ../functions.php:148
 msgid "Sidebar"
-msgstr "Боковая панель"
+msgstr "Sidebar"
 
-#: ../functions.php:152
-#, fuzzy
+#: ../functions.php:159
 msgid "Archive Page"
-msgstr "Архив"
+msgstr "Arşiv Sayfası"
 
-#: ../functions.php:252
-#, fuzzy, php-format
+#: ../functions.php:263
+#, php-format
 msgid "%1$s empowered by %2$s"
-msgstr "%1$s при помощи %2$s"
+msgstr "%1$s empowered by %2$s"
 
-#: ../functions.php:291
+#: ../functions.php:302
 msgid "Anonymous"
-msgstr "Аноним"
+msgstr "Anonim"
 
-#: ../functions.php:304
+#: ../functions.php:315
 msgid "Reply to"
-msgstr "Ответить"
+msgstr "Cevapla"
 
-#: ../functions.php:338
+#: ../functions.php:349
 #, php-format
 msgid "Leave a Reply for %s"
-msgstr "Оставить ответ для %s"
+msgstr "%s için cevap yaz"
 
-#: ../functions.php:339
+#: ../functions.php:350
 msgid "Cancel Reply"
-msgstr "Отменить ответ"
+msgstr "Vazgeç"
 
-#: ../functions.php:340
+#: ../functions.php:351
 msgid "Submit Comment"
-msgstr "Отправить комментарий"
+msgstr "Yorum Gönder"
 
-#: ../functions.php:343
+#: ../functions.php:354
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Вы должны выполнить <a href=\"%s\">вход</a> для комментирования."
+msgstr "Yorum yazmak için <a href=\"%s\">giriş </a> yapmanız gerekli."
 
-#: ../functions.php:348
+#: ../functions.php:359
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+" <a href=\"%1$s\">%2$s</a> olarak giriş yapıldı. <a href=\"%3$s\" title="
+"\"Oturumu kapat\">Çıkış</a>"
 
-#: ../functions.php:358
+#: ../functions.php:369
 msgid "Name"
-msgstr "Имя"
+msgstr "İsim"
 
-#: ../functions.php:363
+#: ../functions.php:374
 msgid "Email"
-msgstr "E-Mail"
+msgstr "E-Posta"
 
-#: ../functions.php:368
+#: ../functions.php:379
 msgid "Website"
-msgstr "Сайт"
+msgstr "Website"
 
-#: ../functions.php:547
+#: ../functions.php:558
 msgid "Write a Comment"
-msgstr "Написать Комментарий"
+msgstr "Yorumla"
 
-#: ../functions.php:782
+#: ../functions.php:843
 msgid "Use as post cover (full-width)"
-msgstr ""
+msgstr "Yazı görseli olarak kullan (tam boy)"
 
-#: ../functions.php:792
+#: ../functions.php:853
 msgid "Disable post cover (full-width)"
-msgstr ""
+msgstr "Yazı görselini iptal et (tam-boy)"
 
-#: ../functions.php:990
+#: ../functions.php:1051
 msgid "in"
-msgstr "в"
+msgstr "--"
 
-#: ../functions.php:999
+#: ../functions.php:1060
 msgid "by"
-msgstr "от"
+msgstr "ile"
 
 #: ../header.php:56
 msgid "Skip to content"
-msgstr ""
+msgstr "İçeriğe atla"
 
 #: ../image.php:23
 #, php-format
@@ -278,150 +273,161 @@ msgid ""
 "%4$s</a> %5$s <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">"
 "%7$s</a>"
 msgstr ""
+"\"%1$s\" - <a href=\"%2$s\" title=\"Tam boy resim bağlantısı\">%3$s &kez; "
+"%4$s</a> %5$s <a href=\"%6$s\" title=\" %7$s 'e dön\" rel=\"galeri\">%7$s</a>"
 
 #: ../image.php:106
 msgid "&larr; Previous image"
-msgstr "&larr; Предыдущее изображение"
+msgstr "&larr; Önceki resim"
 
 #: ../image.php:107
 msgid "Next image &rarr;"
-msgstr "Следующее изображение"
+msgstr "Sonraki resim &rarr;"
 
 #: ../page_archive-template.php:45
 msgid "Yearly Archives"
-msgstr "Годовые Архивы"
+msgstr "Yıllık Arşivler"
 
 #: ../page_archive-template.php:47
 msgid "Select Year"
-msgstr "Выбрать Год"
+msgstr "Yıl Seçin"
 
 #: ../page_archive-template.php:53
 msgid "Monthly Archives"
-msgstr "Месячные архивы"
+msgstr "Aylık Arşivler"
 
 #: ../page_archive-template.php:55
 msgid "Select Month"
-msgstr "Выбрать Месяц"
+msgstr "Ay Seçin"
 
 #: ../page_archive-template.php:61 ../searchform.php:10 ../searchform.php:12
 msgid "Search"
-msgstr "Поиск"
+msgstr "Arama"
 
 #: ../page_archive-template.php:65
 msgid "Explore by Tag"
-msgstr "Поиск по тегу"
+msgstr "Etiketler ile bulun"
 
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Результат поиска по %s"
+msgstr "%s için arama sonuçları :"
 
 #: ../searchform.php:11
 msgid "Search &hellip;"
-msgstr "Поиск &hellip;"
+msgstr "Arama &hellip;"
 
 #: ../sidebar.php:28
 msgid "Meta"
-msgstr "Мета"
+msgstr "Meta"
 
 #: ../single.php:28
 msgid "Related Content by Tag"
-msgstr "Посты с тегом"
+msgstr "İçerik ile ilgili etiketler"
 
 #: ../inc/customizer.php:19
 msgid "Layout Options"
-msgstr "Настройка Макета"
+msgstr "Sayfa düzeni seçenekleri"
 
 #: ../inc/customizer.php:26
 msgid "Excerpt Options"
-msgstr "Опции цитирования"
+msgstr "Özet yazı seçenekleri"
 
 #: ../inc/customizer.php:33
 msgid "General Options"
-msgstr "Основные настройки"
+msgstr "Genel Ayarlar"
 
 #: ../inc/customizer.php:49
 msgid "Post Excerpts"
-msgstr "Цитата записи"
+msgstr "Yazı Özetleri"
+
+#: ../inc/customizer.php:54
+msgid "Disabled"
+msgstr "Devredışı"
+
+#: ../inc/customizer.php:55
+msgid "Enabled"
+msgstr "Aktif"
 
 #: ../inc/customizer.php:72
 msgid "Generate One-Sentence Excerpts"
-msgstr "Создать цитату из одного предложения"
+msgstr "Bir cümlelik özet oluştur."
 
 #: ../inc/customizer.php:90
 msgid "Always Show Full Content for First Post"
-msgstr "Всегда показывать первый пост полностью"
+msgstr "İlk yazı için her zaman tüm içeriği göster"
 
 #: ../inc/customizer.php:108
 msgid "Show Post Word Count in Entry Meta"
-msgstr ""
+msgstr "Kelime sayacını göneri bilgilerinde göster"
 
 #: ../inc/customizer.php:126
 msgid "Show Post Date in Entry Meta"
-msgstr ""
+msgstr "Tarihi gönderi bilgilerinde göster"
 
 #: ../inc/customizer.php:144
 msgid "Show Widgets on Single Posts"
-msgstr "Отображать виджеты в посте"
+msgstr "Wigdetları tekli yazı sayfasında göster"
 
 #: ../inc/customizer.php:162
 msgid "Show Nav Menu on Single Posts"
-msgstr "Отображать меню навигации в посте"
+msgstr "Nav Menü tekli yazı sayfasında göster"
 
 #: ../inc/customizer.php:180
 msgid "Show Updated Date on Single Posts"
-msgstr ""
+msgstr "Güncelleme tarihini yazılarda göster"
 
 #: ../inc/customizer.php:198
-#, fuzzy
 msgid "Single-Column Layout"
-msgstr "Макет с одной колонкой"
+msgstr "Tek kolon tarzı gösterim"
 
 #: ../inc/customizer.php:216
 msgid "Enable Multi-Author Mode"
-msgstr "Включить режим Мульти-Авторства"
+msgstr "Çoklu yazar modunu aktif et"
 
 #: ../inc/customizer.php:234
 msgid "Show Page Load Progress Bar"
-msgstr "Показать индикатор загрузки страницы"
+msgstr "Yükleme çubuğunu göster"
 
 #: ../inc/customizer.php:252
 msgid "Auto-Set Featured Image as Post Cover"
-msgstr ""
+msgstr "Öne çıkan görseli otomatik olarak gönderi kapağına ekle"
 
 #: ../inc/customizer.php:270
-msgid "Comments Call to Action"
-msgstr ""
-
-#: ../inc/customizer.php:283
-msgid "Text Color"
-msgstr "Цвет текста"
+msgid "Overlay Post Title on Post Cover"
+msgstr "Gönderi Kapak resmine gelince yazı başlığını göster"
 
 #: ../inc/customizer.php:288
+msgid "Comments Call to Action"
+msgstr "Yorumlar için kullanılacak ifade"
+
+#: ../inc/customizer.php:301
+msgid "Text Color"
+msgstr "Yazı Rengi"
+
+#: ../inc/customizer.php:306
 msgid "Comment Form Background Color"
-msgstr ""
+msgstr "Yorum arkaplan rengi"
 
-#: ../inc/customizer.php:293
+#: ../inc/customizer.php:311
 msgid "Link Color"
-msgstr "Цвет ссылок"
+msgstr "Bağlantı Renkleri"
 
-#: ../inc/customizer.php:298
-#, fuzzy
+#: ../inc/customizer.php:316
 msgid "Title and Header Text Color"
-msgstr "Цвет текста заголовка"
+msgstr "Başlık Yazı Rengi"
 
-#: ../inc/customizer.php:303
+#: ../inc/customizer.php:321
 msgid "Primary Meta Text Color"
-msgstr "Основной цвет Мета текста"
+msgstr "Birincil Meta Rengi"
 
-#: ../inc/customizer.php:308
+#: ../inc/customizer.php:326
 msgid "Secondary Meta Text Color"
-msgstr "Вторичный цвет Мета текста"
+msgstr "İkincil Meta Rengi"
 
 #: ../inc/template-tags.php:41
-#, fuzzy
 msgid "Post navigation"
-msgstr "Навигация по посту"
+msgstr "Gönderi gezgini"
 
 #: ../inc/template-tags.php:45
 msgid "&larr;"
@@ -433,25 +439,25 @@ msgstr "&rarr;"
 
 #: ../inc/template-tags.php:51
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие записи"
+msgstr "<span class=\"meta-nav\">&larr;</span> Daha eski"
 
 #: ../inc/template-tags.php:55
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Новые записи <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Daha yeni <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:85
 msgid " - Your comment is awaiting moderation."
-msgstr "- Ваш комментарий ожидает проверки -"
+msgstr "- Yorumun moderatör onayını bekliyor."
 
 #: ../inc/template-tags.php:97 ../inc/template-tags.php:140
 msgid "(Edit)"
-msgstr "(Редактировать)"
+msgstr "(Düzenle)"
 
 #: ../inc/template-tags.php:165 ../inc/template-tags.php:196
 #: ../inc/template-tags.php:208
 #, php-format
 msgid "View all posts by %s"
-msgstr "Показать все записи от %s"
+msgstr "Tüm gönerileri %s ile göster"
 
 #: ../inc/template-tags.php:182
 msgid ", "
@@ -459,93 +465,85 @@ msgstr ","
 
 #: ../inc/template-tags.php:271
 msgid "Continue Reading &rarr;"
-msgstr "Продолжить чтение &rarr;"
+msgstr "Devamını Oku &rarr;"
 
 #: ../inc/template-tags.php:288
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Продолжить чтение <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Devamını Oku <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:358
 #, php-format
 msgid "Page %s"
-msgstr "Страница %s"
+msgstr "Sayfa %s"
 
 #: ../inc/template-tags.php:378
 #, php-format
 msgid "View all posts in %s"
-msgstr "Просмотреть все записи в %s"
+msgstr "%s içindeki tüm gönderiler"
 
-#: ../inc/template-tags.php:434
+#: ../inc/template-tags.php:434 ../inc/template-tags.php:475
 msgid "Published"
-msgstr "Опубликовано"
+msgstr "Yayınlandı"
 
 #: ../inc/template-tags.php:442 ../inc/template-tags.php:483
 msgid "Updated"
-msgstr "Обновлено"
+msgstr "Güncellendi"
 
 #: ../inc/template-tags.php:510
 #, php-format
 msgid "%1$s Words"
-msgstr "%1$s Слов"
+msgstr "%1$s Kelime"
 
-#: ../inc/template-tags.php:561 ../inc/template-tags.php:586
-#: ../inc/template-tags.php:615
+#: ../inc/template-tags.php:606 ../inc/template-tags.php:636
+#: ../inc/template-tags.php:665
 #, php-format
 msgid " (this is page <strong>%1$s</strong> of <strong>%2$s</strong>)"
-msgstr ""
+msgstr " (Aktif sayfa <strong>%1$s</strong> toplam <strong>%2$s</strong>)"
 
-#: ../inc/template-tags.php:564
+#: ../inc/template-tags.php:609
 #, php-format
 msgid "Found one search result for <strong>%2$s</strong>."
 msgid_plural "Found %1$s search results for <strong>%2$s</strong>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:590
-#, php-format
-msgid "There is one post filed in <strong>%2$s</strong>."
-msgid_plural "There are %1$s posts filed in <strong>%2$s</strong>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:592
-#, php-format
-msgid "There is one post tagged <strong>%2$s</strong>."
-msgid_plural "There are %1$s posts tagged <strong>%2$s</strong>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:623
-#, php-format
-msgid "There was one post published in %2$s."
-msgid_plural "There were %1$s posts published in %2$s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:625
-#, php-format
-msgid "There is one post published in %2$s."
-msgid_plural "There are %1$s posts published in %2$s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:628
-#, php-format
-msgid "There was one post published on %2$s."
-msgid_plural "There were %1$s posts published on %2$s"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/template-tags.php:635
-#, php-format
-msgid "There was one post published in the month of %2$s."
-msgid_plural "There were %1$s posts published in %2$s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s içerik bulundu : <strong>%2$s</strong>"
 
 #: ../inc/template-tags.php:640
 #, php-format
+msgid "There is one post filed in <strong>%2$s</strong>."
+msgid_plural "There are %1$s posts filed in <strong>%2$s</strong>"
+msgstr[0] "%1$s gönderi işaretli <strong>%2$s</strong>"
+
+#: ../inc/template-tags.php:642
+#, php-format
+msgid "There is one post tagged <strong>%2$s</strong>."
+msgid_plural "There are %1$s posts tagged <strong>%2$s</strong>"
+msgstr[0] "%1$s gönderi etiketli <strong>%2$s</strong>"
+
+#: ../inc/template-tags.php:673
+#, php-format
+msgid "There was one post published in %2$s."
+msgid_plural "There were %1$s posts published in %2$s"
+msgstr[0] "%2$s içinde %1$s gönderi yayınlandı"
+
+#: ../inc/template-tags.php:675
+#, php-format
+msgid "There is one post published in %2$s."
+msgid_plural "There are %1$s posts published in %2$s"
+msgstr[0] "%2$s içinde %1$s gönderi yayınlandı"
+
+#: ../inc/template-tags.php:678
+#, php-format
+msgid "There was one post published on %2$s."
+msgid_plural "There were %1$s posts published on %2$s"
+msgstr[0] " %2$s 'de %1$s gönderi yayında"
+
+#: ../inc/template-tags.php:685
+#, php-format
+msgid "There was one post published in the month of %2$s."
+msgid_plural "There were %1$s posts published in %2$s"
+msgstr[0] "%2$s 'da  %1$s gönderi yayınlandı"
+
+#: ../inc/template-tags.php:690
+#, php-format
 msgid "There was one post published in %2$s %3$s."
 msgid_plural "There were %1$s posts published in %2$s %3$s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " %2$s %3$s da %1$s gönderi yayınlandı"
