@@ -14,6 +14,7 @@ class IndependentPublisher_Customize {
 
 	private static $default_colors = array(
 			'text_color' => '#000000',
+			'background_color' => '#ffffff',
 			'comment_form_background_color' => '#F1F1F1',
 			'comment_form_text_color' => '#000000',
 			'link_color' => '#57ad68',
@@ -98,6 +99,24 @@ class IndependentPublisher_Customize {
 			'show_full_content_first_post', array(
 				'settings' => 'independent_publisher_excerpt_options[show_full_content_first_post]',
 				'label'    => __( 'Always Show Full Content for First Post', 'independent-publisher' ),
+				'section'  => 'independent_publisher_excerpt_options',
+				'type'     => 'checkbox',
+			)
+		);
+
+		// Show Post Thumbnails
+		$wp_customize->add_setting(
+			'independent_publisher_excerpt_options[show_post_thumbnails]', array(
+				'default'           => false,
+				'type'              => 'option',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'independent_publisher_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control(
+			'show_post_thumbnails', array(
+				'settings' => 'independent_publisher_excerpt_options[show_post_thumbnails]',
+				'label'    => __( 'Show Post Thumbnails', 'independent-publisher' ),
 				'section'  => 'independent_publisher_excerpt_options',
 				'type'     => 'checkbox',
 			)
@@ -300,7 +319,7 @@ class IndependentPublisher_Customize {
 				'type'     => 'checkbox',
 			)
 		);
-		
+
 		// Show comment author's full name in reply-link
 		$wp_customize->add_setting(
 			'independent_publisher_general_options[show_full_name_comment_reply_to]', array(

@@ -44,7 +44,7 @@ if ( !function_exists( 'independent_publisher_content_nav' ) ) :
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 
 				<?php wp_pagenavi(); ?>
-				
+
 				<?php previous_post_link( '<div class="nav-previous"><button>%link</button></div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'independent-publisher' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next"><button>%link</button></div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'independent-publisher' ) . '</span>' ); ?>
 
@@ -90,7 +90,7 @@ if ( !function_exists( 'independent_publisher_comment' ) ) :
 			<footer>
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 48 ); ?>
-					<?php printf( sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 						<?php $comment_content_class = "unapproved"; ?>
 						<em><?php _e( ' - Your comment is awaiting moderation.', 'independent-publisher' ); ?></em>
@@ -137,11 +137,15 @@ if ( !function_exists( 'independent_publisher_pings' ) ) :
 	 * even when we're showing paginated comments.
 	 *
 	 * @since Independent Publisher 1.0
+	 *
+	 * @deprecated 1.7 No longer used in code; replaced by independent_publisher_mentions()
+	 * @see independent_publisher_mentions()
 	 */
 	function independent_publisher_pings() {
-		$args        = array(
+		$args = array(
 			'post_id' => get_the_ID(),
-			'type'    => 'pings'
+			'type'    => 'pings',
+			'status'  => 'approve'
 		);
 		$pings_query = new WP_Comment_Query;
 		$pings       = $pings_query->query( $args );
@@ -169,9 +173,10 @@ if ( !function_exists( 'independent_publisher_mentions' ) ) :
 	 * @since Independent Publisher 1.7
 	 */
 	function independent_publisher_mentions() {
-		$args        = array(
-			'post_id' => get_the_ID(),
-			'type__in'    => array('pings', 'webmention')
+		$args = array(
+			'post_id'  => get_the_ID(),
+			'type__in' => array( 'pings', 'webmention' ),
+			'status'   => 'approve'
 		);
 		$mention_query = new WP_Comment_Query;
 		$mentions = $mention_query->query( $args );
@@ -458,10 +463,10 @@ if ( !function_exists( 'independent_publisher_site_info' ) ) :
 				<img class="no-grav" src="<?php echo esc_url( get_header_image() ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php endif; ?>
-		<h1 class="site-title">
+		<div class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-		</h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+		<div class="site-description"><?php bloginfo( 'description' ); ?></div>
 		<?php get_template_part( 'menu', 'social' ); ?>
 		<?php
 	}
@@ -493,8 +498,8 @@ if ( !function_exists( 'independent_publisher_posted_author_card' ) ) :
 			</a>
 		<?php endif; ?>
 
-		<h1 class="site-title"><?php independent_publisher_posted_author(); ?></h1>
-		<h2 class="site-description"><?php the_author_meta( 'description', $post_author_id ) ?></h2>
+		<div class="site-title"><?php independent_publisher_posted_author(); ?></div>
+		<div class="site-description"><?php the_author_meta( 'description', $post_author_id ) ?></div>
 
 		<?php get_template_part( 'menu', 'social' ); ?>
 
@@ -537,11 +542,11 @@ if ( !function_exists( 'independent_publisher_posted_author_bottom_card' ) ) :
 				</a>
 
 				<div class="post-author-info">
-					<h1 class="site-title">
+					<div class="site-title">
 						<?php independent_publisher_posted_author(); ?>
-					</h1>
+					</div>
 
-					<h2 class="site-description"><?php the_author_meta( 'description' ) ?></h2>
+					<div class="site-description"><?php the_author_meta( 'description' ) ?></div>
 				</div>
 				<div class="post-published-date">
 					<h2 class="site-published"><?php _e( 'Published', 'independent-publisher' ); ?></h2>
@@ -673,13 +678,7 @@ if ( !function_exists( 'independent_publisher_search_stats' ) ):
 		$current_page_num = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$pagination_info  = '';
 
-		/**
-		 * Only show pagination info when there is more than 1 page
-		 */
-		if ( $total_pages > 1 ) {
-			$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
-		}
-
+		$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
 		$stats_text = sprintf( _n( 'Found one search result for <strong>%2$s</strong>.', 'Found %1$s search results for <strong>%2$s</strong> (%3$s).', $total, 'independent-publisher' ), number_format_i18n( $total ), get_search_query(), $pagination_info );
 
 		return wpautop( $stats_text );
@@ -692,7 +691,7 @@ if ( !function_exists( 'independent_publisher_taxonomy_archive_stats' ) ):
 	 */
 	function independent_publisher_taxonomy_archive_stats( $taxonomy = 'category' ) {
 
-		// There's no point in showing page numbers of we're using JetPack's Infinite Scroll module
+		// There's no point in showing page numbers of we're using Jetpack's Infinite Scroll module
 		if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) {
 			return '';
 		}
@@ -704,12 +703,7 @@ if ( !function_exists( 'independent_publisher_taxonomy_archive_stats' ) ):
 		$pagination_info  = '';
 		$stats_text       = '';
 
-		/**
-		 * Only show pagination info when there is more than 1 page
-		 */
-		if ( $total_pages > 1 ) {
-			$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
-		}
+		$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
 
 		if ( $taxonomy === 'category' ) {
 			$stats_text = sprintf( _n( 'There is one post filed in <strong>%2$s</strong>.', 'There are %1$s posts filed in <strong>%2$s</strong> (%3$s).', $total, 'independent-publisher' ), number_format_i18n( $total ), single_term_title( '', false ), $pagination_info );
@@ -733,12 +727,7 @@ if ( !function_exists( 'independent_publisher_date_archive_description' ) ):
 		$pagination_info   = '';
 		$date_archive_meta = '';
 
-		/**
-		 * Only show pagination info when there is more than 1 page
-		 */
-		if ( $total_pages > 1 ) {
-			$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
-		}
+		$pagination_info = sprintf( __( 'this is page <strong>%1$s</strong> of <strong>%2$s</strong>', 'independent-publisher' ), number_format_i18n( $current_page_num ), number_format_i18n( $total_pages ) );
 
 		/**
 		 * Only proceed if we're on the first page and the description has not been overridden via independent_publisher_custom_date_archive_meta
@@ -807,7 +796,7 @@ endif;
 if ( !function_exists( 'independent_publisher_footer_credits' ) ):
 	/**
 	 * Echoes the theme footer credits. Overriding this function in a Child Theme also
-	 * applies the changes to JetPack's Infinite Scroll footer.
+	 * applies the changes to Jetpack's Infinite Scroll footer.
 	 */
 	function independent_publisher_footer_credits() {
 		return independent_publisher_get_footer_credits();

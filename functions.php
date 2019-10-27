@@ -109,6 +109,11 @@ if ( ! function_exists( 'independent_publisher_setup' ) ) :
 		add_option( 'independent_publisher_general_options', array( 'show_author_card' => true ) );
 
 		/**
+		 * Set default value for Show Post Thumbnails theme option
+		 */
+		add_option( 'independent_publisher_excerpt_options', array( 'show_post_thumbnails' => false ) );
+
+		/**
 		 * This theme uses wp_nav_menu() in two locations.
 		 */
 		register_nav_menus(
@@ -218,17 +223,7 @@ function independent_publisher_scripts() {
 	}
 
 	/**
-	 * Load JetPack Sharing Buttons Style Enhancements
-	 */
-	independent_publisher_jetpack_sharing_css();
-
-	/**
-	 * Load JetPack Sharing Buttons blank Sharing Label Enhancement
-	 */
-	independent_publisher_jetpack_sharing_label_css();
-
-	/**
-	 * Load JetPack Infinite Scroll Dark Overlay Bug Fix
+	 * Load Jetpack Infinite Scroll Dark Overlay Bug Fix
 	 */
 	independent_publisher_jetpack_dark_overlay_fix_css();
 
@@ -251,6 +246,28 @@ if ( ! function_exists( 'independent_publisher_progress_bar_markup' ) ) :
 	}
 endif;
 add_action( 'wp_footer', 'independent_publisher_progress_bar_markup' );
+
+if ( ! function_exists( 'independent_publisher_remove_locale_stylesheet' ) ) :
+	/**
+	 * Remove locale_stylesheet() hook to prevent WordPress from
+	 * automatically loading rtl.css. We need to load this manually
+	 * so that we can load it before loading CSS from Customizer.
+	 *
+	 * @see https://github.com/raamdev/independent-publisher/issues/230
+	 */
+	function independent_publisher_remove_locale_stylesheet() {
+		remove_action( 'wp_head', 'locale_stylesheet' );
+	}
+endif;
+
+if ( ! function_exists( 'independent_publisher_stylesheet_rtl' ) ) :
+	/**
+	 * Enqueue RTL stylesheet
+	 */
+	function independent_publisher_stylesheet_rtl() {
+		wp_enqueue_style( 'independent-publisher-style', get_template_directory_uri() . '/css/rtl-style.css' );
+	}
+endif;
 
 if ( ! function_exists( 'independent_publisher_stylesheet' ) ) :
 	/**
@@ -285,7 +302,13 @@ add_action( 'wp_ajax_nopriv_independent_publisher_customizer_css', 'independent_
  * IMPORTANT: Customizer CSS *must* be called _after_ the main stylesheet,
  * to ensure that customizer-modified styles override the defaults.
  */
-add_action( 'wp_enqueue_scripts', 'independent_publisher_stylesheet' );
+if( is_rtl() ) {
+	add_action( 'init', 'independent_publisher_remove_locale_stylesheet' );
+	add_action( 'wp_enqueue_scripts', 'independent_publisher_stylesheet_rtl' );
+} else {
+	add_action( 'wp_enqueue_scripts', 'independent_publisher_stylesheet' );
+}
+
 add_action( 'wp_enqueue_scripts', 'independent_publisher_customizer_stylesheet' );
 
 if ( ! function_exists( 'independent_publisher_wp_fullscreen_title_editor_style' ) ) :
@@ -355,9 +378,7 @@ if ( ! function_exists( 'independent_publisher_author_comment_reply_link' ) ) :
 	/*
 	 * Change the comment reply link to use 'Reply to [Author Name]'
 	 */
-	function independent_publisher_author_comment_reply_link( $link, $args, $comment ) {
-
-		$comment = get_comment( $comment );
+	function independent_publisher_author_comment_reply_link( $args, $comment, $post ) {
 
 		// If no comment author is blank, use 'Anonymous'
 		if ( empty( $comment->comment_author ) ) {
@@ -376,16 +397,14 @@ if ( ! function_exists( 'independent_publisher_author_comment_reply_link' ) ) :
 			$author = substr( $author, 0, strpos( $author, ' ' ) );
 		}
 
-		// Replace Reply Link with "Reply to <Author Name>"
-		$reply_link_text = $args['reply_text'];
-		$link            = str_replace( $reply_link_text, __( 'Reply to', 'independent-publisher' ) . ' ' . $author, $link );
+		// Replace Reply Text with "Reply to <Author Name>"
+		$args['reply_text'] = __( 'Reply to', 'independent-publisher' ) . ' ' . $author;
 
-		return $link;
+		return $args;
 	}
 endif;
 
-add_filter( 'comment_reply_link', 'independent_publisher_author_comment_reply_link', 420, 4 );
-
+add_filter( 'comment_reply_link_args', 'independent_publisher_author_comment_reply_link', 420, 4 );
 
 if ( ! function_exists( 'independent_publisher_comment_form_args' ) ) :
 	/**
@@ -578,6 +597,18 @@ function independent_publisher_generate_one_sentence_excerpts() {
 function independent_publisher_show_full_content_first_post() {
 	$independent_publisher_excerpt_options = get_option( 'independent_publisher_excerpt_options' );
 	if ( isset( $independent_publisher_excerpt_options['show_full_content_first_post'] ) && $independent_publisher_excerpt_options['show_full_content_first_post'] ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Returns true if Show Post Thumbnails option is enabled
+ */
+function independent_publisher_show_post_thumbnails() {
+	$independent_publisher_excerpt_options = get_option( 'independent_publisher_excerpt_options' );
+	if ( isset( $independent_publisher_excerpt_options['show_post_thumbnails'] ) && $independent_publisher_excerpt_options['show_post_thumbnails'] ) {
 		return true;
 	} else {
 		return false;
@@ -1147,12 +1178,13 @@ function independent_publisher_replytocom() {
 }
 
 /*
- * Returns the number of webmentions, pings/trackbacks the current post has
+ * Returns the number of approved webmentions, pings/trackbacks the current post has
  */
 function independent_publisher_comment_count_mentions() {
 	$args = array(
 		'post_id'  => get_the_ID(),
-		'type__in' => array( 'pings', 'webmention' )
+		'type__in' => array( 'pings', 'webmention' ),
+		'status'   => 'approve'
 	);
 	$_query = new WP_Comment_Query;
 	return count( $_query->query( $args ) );
